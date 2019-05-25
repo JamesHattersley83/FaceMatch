@@ -1,9 +1,9 @@
 import React from "react";
 
-const ImageLinkForm = ({ onInputChange, onSubmit }) => {
+const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
   return (
     <div className="container">
-      <h5 className="text-center mt-5">
+      <h5 className="text-center mt-3">
         {"This App will detect faces in your photos. Give it a try!"}
       </h5>
       <div className="input-group mt-3">
@@ -18,7 +18,7 @@ const ImageLinkForm = ({ onInputChange, onSubmit }) => {
             className="btn btn-outline-secondary"
             type="button"
             id="button-addon2"
-            onClick={onSubmit}
+            onClick={onButtonSubmit}
           >
             Detect
           </button>
