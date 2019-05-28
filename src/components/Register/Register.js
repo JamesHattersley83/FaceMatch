@@ -1,15 +1,26 @@
 import React from "react";
-import "./SignIn.css";
+import "./Register.css";
 
-const SignIn = ({ onRouteChange }) => {
+const Register = ({ onRouteChange }) => {
   return (
     <div className="container">
       <div className="row">
         <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
           <div className="card card-signin my-5">
             <div className="card-body">
-              <h5 className="card-title text-center">Sign In</h5>
+              <h5 className="card-title text-center">Register</h5>
               <form className="form-signin">
+                <div className="form-label-group">
+                  <input
+                    type="text"
+                    id="inputName"
+                    className="form-control"
+                    placeholder="Name"
+                    required
+                    autoFocus
+                  />
+                  <label htmlFor="inputName">Name</label>
+                </div>
                 <div className="form-label-group">
                   <input
                     type="email"
@@ -51,15 +62,7 @@ const SignIn = ({ onRouteChange }) => {
                   type="submit"
                   onClick={() => onRouteChange("home")}
                 >
-                  Sign in
-                </button>
-                <hr className="my-4" />
-                <button
-                  className="btn btn-lg btn-google btn-block text-uppercase"
-                  type="submit"
-                  onClick={() => onRouteChange("register")}
-                >
-                  <i className="fab fa-google mr-2" /> Register
+                  Register
                 </button>
               </form>
             </div>
@@ -70,4 +73,4 @@ const SignIn = ({ onRouteChange }) => {
   );
 };
 
-export default SignIn;
+export default Register;
