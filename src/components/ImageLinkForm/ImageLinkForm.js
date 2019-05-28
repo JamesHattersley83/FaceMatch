@@ -15,7 +15,7 @@ const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
         />
         <div className="input-group-append">
           <button
-            className="btn btn-outline-secondary"
+            className="btn btn-danger text-light"
             type="button"
             id="button-addon2"
             onClick={onButtonSubmit}

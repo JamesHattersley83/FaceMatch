@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation/Navigation";
 import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
 import Rank from "./components/Rank/Rank";
 import FaceRecognition from "./components/FaceRecognition/FaceRecognition";
+import SignIn from "./components/SignIn/SignIn";
 
 const app = new Clarifai.App({
   apiKey: "ac59d70b484b403ea4385b53930b525a"
@@ -59,6 +60,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navigation />
+        <SignIn />
         <Rank />
         <ImageLinkForm
           onInputChange={this.onInputChange}
