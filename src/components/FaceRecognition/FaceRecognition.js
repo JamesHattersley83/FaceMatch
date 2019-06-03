@@ -3,12 +3,12 @@ import "./FaceRecognition.css";
 
 const FaceRecognition = ({ imageUrl, box }) => {
   return (
-    <div className="container">
+    <div className="d-flex justify-content-center">
       <div className="position-absolute mt-3 mb-3">
         <img
           id="inputImage"
           alt=""
-          className="rounded mx-auto d-block"
+          className="rounded d-block"
           src={imageUrl}
           width="350px"
           height="auto"
