@@ -1,37 +1,38 @@
-import React from "react";
-import "./SignIn.css";
+import React from 'react';
+import './SignIn.css';
 
 class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      signInEmail: "",
-      signInPassword: ""
+      signInEmail: '',
+      signInPassword: '',
     };
   }
-  onEmailChange = event => {
+  onEmailChange = (event) => {
     this.setState({ signInEmail: event.target.value });
   };
-  onPasswordChange = event => {
+  onPasswordChange = (event) => {
     this.setState({ signInPassword: event.target.value });
   };
 
   onSubmitSignIn = () => {
-    fetch("http://localhost:3000/signin", {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
+    fetch('http://localhost:4000/signin', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email: this.state.signInEmail,
-        password: this.state.signInPassword
-      })
+        password: this.state.signInPassword,
+      }),
     })
-      .then(response => response.json())
-      .then(data => {
-        if (data === "success") {
-          this.props.onRouteChange("home");
+      .then((response) => response.json())
+      .then((user) => {
+        if (user.id) {
+          this.props.onloadUser(user)
+          this.props.onRouteChange('home');
         }
       });
-  };
+    };
 
   render() {
     const { onRouteChange } = this.props;
@@ -92,7 +93,7 @@ class SignIn extends React.Component {
                   <button
                     className="btn btn-lg btn-google btn-block text-uppercase"
                     type="submit"
-                    onClick={() => onRouteChange("register")}
+                    onClick={() => onRouteChange('register')}
                   >
                     <i className="fab fa-google mr-2" /> Register
                   </button>

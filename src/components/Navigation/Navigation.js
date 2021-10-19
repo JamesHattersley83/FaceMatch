@@ -22,7 +22,7 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
           <button
             className="btn btn-outline-light mx-3"
             type="button"
-            onClick={() => onRouteChange("signIn")}
+            onClick={() => onRouteChange("signin")}
           >
             Sign In
           </button>
