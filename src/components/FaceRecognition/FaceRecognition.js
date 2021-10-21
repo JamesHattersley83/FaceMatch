@@ -1,5 +1,5 @@
-import React from "react";
-import "./FaceRecognition.css";
+import React from 'react';
+import './FaceRecognition.css';
 
 const FaceRecognition = ({ imageUrl, box }) => {
   return (
@@ -19,7 +19,7 @@ const FaceRecognition = ({ imageUrl, box }) => {
             top: box.topRow,
             right: box.rightCol,
             bottom: box.bottomRow,
-            left: box.leftCol
+            left: box.leftCol,
           }}
         />
       </div>
