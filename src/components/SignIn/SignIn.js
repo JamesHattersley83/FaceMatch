@@ -17,7 +17,7 @@ class SignIn extends React.Component {
   };
 
   onSubmitSignIn = () => {
-    fetch('http://localhost:4000/signin', {
+    fetch('https://quiet-hamlet-18556.herokuapp.com/signin', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -28,11 +28,11 @@ class SignIn extends React.Component {
       .then((response) => response.json())
       .then((user) => {
         if (user.id) {
-          this.props.onloadUser(user)
+          this.props.onloadUser(user);
           this.props.onRouteChange('home');
         }
       });
-    };
+  };
 
   render() {
     const { onRouteChange } = this.props;
